@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: service-b
-          image: YOUR_DOCKERHUB_USER/service-b:0.0.1
+          image: YOUR_DOCKERHUB_USER/service-b:0.0.2
           ports:
             - containerPort: 8080
 ---
@@ -54,7 +54,7 @@ spec:
     spec:
       containers:
         - name: service-a
-          image: YOUR_DOCKERHUB_USER/service-a:0.0.1
+          image: YOUR_DOCKERHUB_USER/service-a:0.0.2
           env:
             - name: SERVICE_B_URL
               value: "http://service-b:8080/receive"

@@ -129,25 +129,9 @@ kubectl run -n propagation-test curlpod --rm -it --image=curlimages/curl -- \
 
 ---
 
-## 6) (Opcional) Subir este repo a tu GitHub
+## Troubleshooting rápido
 
-1) Crea un repo vacío en GitHub, por ejemplo: `propagation-poc`
-2) En tu máquina, desde la raíz del proyecto:
-
-```bash
-git init
-git add .
-git commit -m "POC: traceparent propagation A->B"
-git branch -M main
-git remote add origin https://github.com/<TU_USUARIO>/propagation-poc.git
-git push -u origin main
-```
-
----
-
-## 7) Troubleshooting rápido
-
-### 7.1) Service A no obtiene EXTERNAL-IP
+### Service A no obtiene EXTERNAL-IP
 - En AKS, `type: LoadBalancer` puede tardar un poco.
 - Revisa eventos:
 
@@ -155,5 +139,5 @@ git push -u origin main
 kubectl describe svc -n propagation-test service-a
 ```
 
-### 7.2) ImagePullBackOff (si tu repo DockerHub es privado)
+### ImagePullBackOff (si tu repo DockerHub es privado)
 - Necesitas `imagePullSecret` y agregarlos al YAML.
